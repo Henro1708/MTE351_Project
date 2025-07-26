@@ -15,7 +15,7 @@ x = v * t;                     % position as function of time
 z = zeros(size(t));            % vertical displacement of the wheel
 
 % Apply sin^2 profile at each grout location
-haversine_profile = @(s) grout_depth * sin(pi * s / grout_width).^2;
+haversine_profile = @(s) grout_depth * sin(pi * s * v / grout_width).^2;
 
 for i = 1:length(t)
     % Find position in current tile
